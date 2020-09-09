@@ -1,0 +1,16 @@
+<div class="topics">
+  <% @topics.each do |topic| %>
+    <%= button_to topic.name, interests_path(topic_id: topic), class: "follow_topic" %>
+  <% end %>
+</div>
+<% unless current_user == @question.user %>
+  <%= button_to "follow #{@question.user.email}", relationships_path(followed_id: @question.user), class: "follow_user" %>
+<% end %>
+<div class="question-info">
+  <p><%= @question.title %></p>
+  <div class="answers">
+    <% @answers.each do |answer| %>
+      <p class="answer"><%= answer.body %>(<%= answer.user.email %>)</p>
+    <% end %>
+  </div>
+</div>

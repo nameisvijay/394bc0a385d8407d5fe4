@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.follow_topic {
+  display: inline-block;
+  float: left;
+}
+.question-info {
+  clear: both;
+}

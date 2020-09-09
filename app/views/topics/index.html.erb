@@ -1,0 +1,15 @@
+<div class="followed-topoics">
+  <h1>followed topics</h1>
+  <%= current_user.topics.each do |topic| %>
+    <ul>
+      <li>topic.name</li>
+    </ul>
+  <% end %>
+</div>
+<hr>
+<% @topics.each do |topic| %>
+  <ul>
+    <li>topic.name</li>
+    <li><%= button_to "follow", interest_path(topic) %></li>
+  </ul>
+<% end %>

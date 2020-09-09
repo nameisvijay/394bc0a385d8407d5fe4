@@ -11,5 +11,10 @@ class User < ApplicationRecord
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
 
   def following
+    followed_users = []
+    relationships.each do |r|
+      followed_users << r.followed
+    end
+    return followed_users
   end
 end

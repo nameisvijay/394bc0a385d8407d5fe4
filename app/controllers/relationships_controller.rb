@@ -2,7 +2,7 @@ class RelationshipsController < ApplicationController
   before_action :set_followed
 
   def create
-    @relationship = Relationship.new(followed_id: @followed_user, follower_id: current_user)
+    @relationship = Relationship.new(followed: @followed_user, follower: current_user)
     respond_to do |format|
       if @relationship.save
         format.html { redirect_to root_path }
